@@ -1,0 +1,55 @@
+{
+  "name": "Curso - PySpark + MySQL",
+
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+
+  "hostRequirements": {
+    "cpus": 4
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistro": "tem"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "jupyter.notebookFileRoot": "${workspaceFolder}",
+        "jupyter.askForKernelRestart": false,
+        "notebook.kernelPicker.type": "mru",
+        "files.associations": {
+          "*.ipynb": "jupyter-notebook"
+        }
+      }
+    }
+  },
+
+  "forwardPorts": [8888, 4040],
+  "portsAttributes": {
+    "8888": {
+      "label": "Jupyter Lab",
+      "onAutoForward": "notify"
+    },
+    "4040": {
+      "label": "Spark UI",
+      "onAutoForward": "silent"
+    }
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  "remoteEnv": {
+    "CONNECTOR_J_PATH": "/workspaces/${localWorkspaceFolderBasename}/drivers/mysql-connector-j.jar",
+    "JAVA_TOOL_OPTIONS": "-Xss512k -XX:+UseContainerSupport"
+  }
+}

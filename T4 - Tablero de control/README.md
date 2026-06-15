@@ -1,0 +1,1 @@
+En esta carpeta pueden alojar los archivos del entregable individial sobre: Tableros de control

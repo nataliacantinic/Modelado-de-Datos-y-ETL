@@ -1,0 +1,15 @@
+
+# Motor Spark
+pyspark==3.5.1
+ 
+jupyterlab==4.2.5
+ipykernel==6.29.5
+ydata-profiling==4.10.0
+ 
+pandas==2.2.2
+numpy==1.26.4
+ 
+matplotlib==3.9.1
+seaborn==0.13.2
+ 
+mysql-connector-python==9.7.0
